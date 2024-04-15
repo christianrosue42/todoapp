@@ -1,0 +1,14 @@
+version: '3'
+services:
+  todo-service:
+    build: ./todo-service
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_URL=${DB_URL}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+  todo-ui:
+    build: ./todo-ui
+    ports:
+      - "80:80"
